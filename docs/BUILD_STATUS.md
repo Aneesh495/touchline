@@ -1,0 +1,58 @@
+# Build status
+
+This file records, honestly, what is implemented and runnable versus what is
+blocked on resources (large licensed data, long compute, or network access that a
+single build session cannot complete). Status values follow the convention used
+across the project: `passed`, `failed`, `blocked`, `unverified`.
+
+Last updated: 2026-11-02.
+
+## Capabilities (T01-T36)
+
+| ID | Capability | Status | Note |
+|----|------------|--------|------|
+| T01 | Resumable acquisition | partial | Budgeted HTTP client with checksums and change detection implemented; full multi-season pull blocked on access/time. |
+| T02 | Identity resolution | implemented | Alias-table resolver with reviewable evidence records. |
+| T03 | Match + event coverage | partial | Coverage matrix and parsers implemented; full minima blocked on download volume. |
+| T04 | Canonical events + transforms | implemented | Coordinate and direction transforms, period/clock model, shootout separation. |
+| T05 | Possession segmentation | implemented | Rule-based segmenter with edge-case handling and review flags. |
+| T06 | Feature registry + availability | implemented | Features carry knowledge timestamps; leakage audit enforces them. |
+| T07 | Elo + Dixon-Coles | implemented | Both run end to end with identifiable parameters. |
+| T08 | xG models | implemented | Logistic, gradient-boosted, and neural spatial variants. |
+| T09 | Goal-prob evaluation by strata | implemented | Stratified calibration reporting. |
+| T10 | Expected-threat grid | implemented | Converged value-iteration solve with absorbing states. |
+| T11 | Sequence action value | implemented | Before/after value over a declared horizon. |
+| T12 | Masked spatial encoder | implemented | Set encoder with player masks; exercised on synthetic + any real 360 slice available. |
+| T13 | Feature-gated model selection | implemented | Off-ball valuation disabled on event-only matches. |
+| T14 | Possession sequence encoder | implemented | Causal masking, padded batches, gradient checks. |
+| T15 | Hierarchical effects | implemented | Shrinkage with exposure-aware estimates. |
+| T16-T36 | remainder | partial/implemented | See per-module docs; heavy evaluation gates blocked on compute. |
+
+## Acceptance gates (G01-G21)
+
+| Gate | Status | Evidence / blocker |
+|------|--------|--------------------|
+| G01 Coverage | blocked | Parsers + coverage matrix run; 20k-match / 500k-event minima need large download. |
+| G02 Canonicalization | passed | Adversarial reconciliation tests in `tests/`. |
+| G03 Leakage | passed | Frozen time/identity audit tests. |
+| G04 Baselines | passed | Elo, DC, xG, xT, action value run on eligible holdouts. |
+| G05 Neural learning | passed (small) | 3-seed training with gradient/update proof on sample; full-scale blocked. |
+| G06 Scientific result | partial | Hypothesis harness runs on sample; full campaign blocked. |
+| G07 Spatial mechanism | passed | Permutation-invariance + masking + ablation tests. |
+| G08 Calibration | passed | Validation-only calibrators + reliability reporting. |
+| G09 Rules engine | partial | Enumeration agreement passed; 10 official-table reproduction needs full results data. |
+| G10 Simulation | partial | Monte Carlo + exact enumeration correct; 100k-draw showcase runs at reduced scale by default. |
+| G11 UI | partial | CLI product complete; TypeScript UI scaffold present, not full. |
+| G12 Serving | partial | CPU batched inference path implemented; p95 bench runs on sample. |
+| G13 Recovery | passed | Resume tests for acquisition/training/simulation. |
+| G14 Semantic verifier | passed | Independent replay rejects leakage/flipped-pitch/altered-label/impossible-qualification. |
+| G15 Research publication | partial | Report + figures from frozen artifacts; full reconciliation at sample scale. |
+| G16 Release | partial | Fresh-setup demo verified; full remote campaign blocked. |
+| G17-G21 | blocked/partial | Expanded coverage, dictionary reconciliation, provenance, campaign, publication: scaffolding implemented, full data/compute blocked. |
+
+## How to read this
+
+A gate marked `passed` has a real test or runnable artifact behind it at the scale
+indicated. A gate marked `blocked` has its code path implemented and tested at
+small scale, but the full acceptance threshold requires data or compute beyond this
+environment. No gate is marked passed on the basis of fabricated data.

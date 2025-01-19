@@ -1,0 +1,40 @@
+# Agent-private continuation state and accounting. Never committed.
+.agent-local/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Data and artifacts (large, externally stored or regenerated)
+data/raw/
+data/arrow/
+data/interim/
+artifacts/
+evidence/
+*.parquet
+*.arrow
+*.ckpt
+*.pt
+
+# Node / UI
+ui/node_modules/
+ui/dist/
+node_modules/
+
+# OS / editor
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Rendered diagram intermediates kept, but scratch excluded
+*.tmp
