@@ -46,7 +46,7 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "W"]
-ignore = ["E501"]
+ignore = ["E501", "UP042"]  # keep (str, Enum) uniform across the codebase
 
 [tool.mypy]
 python_version = "3.11"
