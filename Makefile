@@ -21,8 +21,10 @@ doctor:
 build:
 	$(PY) -c "import touchline; print('touchline', touchline.__version__)"
 
+# Coverage plugin autoload hangs in some sandboxed environments; disable autoload
+# and enable the plugins we actually use explicitly.
 test:
-	$(PY) -m pytest tests/ -q
+	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 $(PY) -m pytest tests/ -q -p no:cacheprovider
 
 lint:
 	.venv/bin/ruff check src tests
