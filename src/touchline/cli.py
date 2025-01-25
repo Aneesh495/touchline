@@ -81,6 +81,11 @@ def main(argv: list[str] | None = None) -> int:
 
         print(f"touchline {touchline.__version__}")
         return 0
+    if args.command == "demo":
+        from touchline.pipeline.demo import run_demo
+
+        run_demo()
+        return 0
     return _not_wired(args.command)
 
 
