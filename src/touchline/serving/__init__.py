@@ -7,10 +7,10 @@ come from the local models. The batched inference is designed so a p95 latency
 budget can be measured honestly on a pinned CPU host.
 """
 
+from touchline.serving.cache import LRUCache
 from touchline.serving.inference import (
     BatchInferenceService,
     InferenceBounds,
 )
-from touchline.serving.cache import LRUCache
 
 __all__ = ["BatchInferenceService", "InferenceBounds", "LRUCache"]

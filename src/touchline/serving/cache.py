@@ -9,7 +9,8 @@ synchronous; it exists to bound work, not to be a distributed cache.
 from __future__ import annotations
 
 from collections import OrderedDict
-from typing import Generic, Hashable, Optional, TypeVar
+from collections.abc import Hashable
+from typing import Generic, TypeVar
 
 K = TypeVar("K", bound=Hashable)
 V = TypeVar("V")
@@ -24,7 +25,7 @@ class LRUCache(Generic[K, V]):
         self.hits = 0
         self.misses = 0
 
-    def get(self, key: K) -> Optional[V]:
+    def get(self, key: K) -> V | None:
         if key in self._data:
             self._data.move_to_end(key)
             self.hits += 1

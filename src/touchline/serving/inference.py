@@ -13,8 +13,8 @@ the serving gate.
 from __future__ import annotations
 
 import time
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable, Optional
 
 import numpy as np
 
@@ -42,7 +42,7 @@ class BatchInferenceService:
     def __init__(
         self,
         shot_predict: Callable[[np.ndarray], np.ndarray],
-        seq_predict: Optional[Callable[[list], list]] = None,
+        seq_predict: Callable[[list], list] | None = None,
         bounds: InferenceBounds | None = None,
         cache_capacity: int = 4096,
     ):
