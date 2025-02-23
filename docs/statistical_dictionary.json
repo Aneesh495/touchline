@@ -1,0 +1,95 @@
+{
+  "version": "1",
+  "measures": [
+    {
+      "name": "goals",
+      "grain": "player",
+      "unit": "count",
+      "numerator": "goals scored",
+      "denominator": null,
+      "exclusions": ["own goals credited elsewhere"],
+      "notes": "regulation and extra time; shootouts separate"
+    },
+    {
+      "name": "xg",
+      "grain": "shot",
+      "unit": "probability",
+      "numerator": "modelled goal probability",
+      "denominator": null,
+      "exclusions": ["shootout kicks"],
+      "notes": "penalty and open-play contexts separable"
+    },
+    {
+      "name": "xg_per_shot",
+      "grain": "player",
+      "unit": "probability",
+      "numerator": "sum of xg",
+      "denominator": "shots",
+      "exclusions": ["shootout kicks"],
+      "notes": "denominator must be real shots"
+    },
+    {
+      "name": "pass_accuracy",
+      "grain": "player",
+      "unit": "ratio",
+      "numerator": "completed passes",
+      "denominator": "attempted passes",
+      "exclusions": [],
+      "notes": "provider completion policy applies"
+    },
+    {
+      "name": "action_value",
+      "grain": "action",
+      "unit": "probability_change",
+      "numerator": "change in score minus concede probability",
+      "denominator": null,
+      "exclusions": [],
+      "notes": "over a declared future horizon of actions"
+    },
+    {
+      "name": "expected_threat",
+      "grain": "pitch_cell",
+      "unit": "probability",
+      "numerator": "probability of scoring before loss",
+      "denominator": null,
+      "exclusions": [],
+      "notes": "from a converged grid value iteration"
+    },
+    {
+      "name": "points",
+      "grain": "team_season",
+      "unit": "count",
+      "numerator": "sum of result points",
+      "denominator": null,
+      "exclusions": [],
+      "notes": "points per win is season specific"
+    },
+    {
+      "name": "penalty_conversion",
+      "grain": "taker",
+      "unit": "ratio",
+      "numerator": "penalties scored",
+      "denominator": "penalties taken",
+      "exclusions": ["shootout kicks"],
+      "notes": "retaken penalties count once; small samples shrunk"
+    },
+    {
+      "name": "corner_conversion",
+      "grain": "team",
+      "unit": "ratio",
+      "numerator": "goals within a corner-possession horizon",
+      "denominator": "corners",
+      "exclusions": [],
+      "notes": "horizon declared; rare-event partial pooling"
+    },
+    {
+      "name": "red_cards",
+      "grain": "player",
+      "unit": "count",
+      "numerator": "straight reds plus second yellows",
+      "denominator": null,
+      "exclusions": [],
+      "notes": "reconciled against manpower reduction events"
+    }
+  ]
+}
