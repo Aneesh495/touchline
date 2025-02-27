@@ -1,0 +1,19 @@
+flowchart TB
+  domain[domain: clock, geometry, ids, events, match]
+  ingest[ingest: budget, cache, identity, acquire, sources]
+  parse[parse: statsbomb, football_data_uk]
+  features[features: registry, shots, possession, splits, team_strength]
+  models[models: elo, dixon_coles, xg, expected_threat, action_value, hierarchical, neural]
+  simulate[simulate: rules, monte_carlo, enumerate, ucl]
+  registry[registry: artifacts, model_card, recovery]
+  serving[serving: cache, inference]
+  verify[verify: checks, verifier]
+  ingest --> domain
+  parse --> domain
+  features --> domain
+  models --> features
+  simulate --> models
+  serving --> registry
+  registry --> models
+  verify --> models
+  verify --> simulate

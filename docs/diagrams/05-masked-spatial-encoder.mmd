@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph FreezeFrame
+    P1[player 1 x,y,mate]
+    P2[player 2 x,y,mate]
+    Pk[... up to max]
+    PAD[padded slots]
+  end
+  P1 --> PHI[shared phi MLP]
+  P2 --> PHI
+  Pk --> PHI
+  PAD -. mask=0 .-> POOL
+  PHI --> POOL[masked mean pool]
+  POOL --> CAT[concat with ball features]
+  BALL[ball x,y] --> CAT
+  CAT --> RHO[rho head]
+  RHO --> OUT[goal probability]

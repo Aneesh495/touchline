@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph Sources
+    SB[StatsBomb open data]
+    FD[football-data.co.uk]
+  end
+  SB --> ING[ingest: budget, cache, identity]
+  FD --> ING
+  ING --> PARSE[parse: canonical objects]
+  PARSE --> FEAT[features: leakage-aware]
+  FEAT --> MODELS[models: xG, xT, action value, strength]
+  MODELS --> REG[registry: cards, checkpoints]
+  REG --> SIM[simulate: rules, Monte Carlo]
+  REG --> SERVE[serving: batched CPU inference]
+  SIM --> CLI[cli / interface]
+  SERVE --> CLI
+  REG --> VERIFY[verify: independent replay]

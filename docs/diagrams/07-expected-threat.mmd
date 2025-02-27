@@ -1,0 +1,8 @@
+flowchart LR
+  Z[cell z] -->|shoot prob s| G[goal with prob g]
+  Z -->|move prob 1-s| ZP[cell z prime]
+  ZP --> VREC[value of z prime]
+  Z -->|turnover deficit| LOSS[absorbing loss value 0]
+  G --> VEQ[V = s times g plus move-weighted sum]
+  VREC --> VEQ
+  VEQ --> SOLVE[value iteration converges]

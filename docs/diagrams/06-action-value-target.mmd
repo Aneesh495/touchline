@@ -1,0 +1,10 @@
+flowchart LR
+  A[action i] --> S1[state after i]
+  S1 --> SCORE[P score within horizon]
+  S1 --> CONCEDE[P concede within horizon]
+  SCORE --> V[V = P score - P concede]
+  CONCEDE --> V
+  PREV[state after i-1] --> VB[V before]
+  VB -->|same team| DELTA[value = V_after - V_before]
+  VB -->|turnover: negate| DELTA
+  V --> DELTA

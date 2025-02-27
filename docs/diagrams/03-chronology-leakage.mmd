@@ -1,0 +1,11 @@
+flowchart LR
+  subgraph Timeline
+    M1[match t-2] --> M2[match t-1] --> ORIGIN[prediction origin t]
+    ORIGIN --> M4[match t+1]
+  end
+  M1 -. allowed .-> ORIGIN
+  M2 -. allowed .-> ORIGIN
+  M4 == blocked: future ==x ORIGIN
+  POST[final league position] == blocked: post-match ==x ORIGIN
+  classDef bad fill:#fdd,stroke:#c00;
+  class M4,POST bad;

@@ -1,0 +1,12 @@
+flowchart LR
+  START[job starts] --> CP{checkpoint exists?}
+  CP -->|yes| RESUME[resume at completed_units]
+  CP -->|no| FRESH[start fresh]
+  RESUME --> WORK[do next unit]
+  FRESH --> WORK
+  WORK --> SAVE[atomic checkpoint write]
+  SAVE --> CRASH{interrupted?}
+  CRASH -->|yes| START
+  CRASH -->|no| MORE{more units?}
+  MORE -->|yes| WORK
+  MORE -->|no| DONE[complete, no duplicate work]

@@ -1,0 +1,10 @@
+stateDiagram-v2
+  [*] --> TeamAControl
+  TeamAControl --> TeamAControl: controlled action by A
+  TeamAControl --> Contested: duel / pressure (no switch)
+  Contested --> TeamAControl: A regains
+  Contested --> TeamBControl: B gains control
+  TeamAControl --> TeamBControl: B controlled action (switch)
+  TeamAControl --> Keeper: goalkeeper control (flagged)
+  Keeper --> TeamBControl
+  TeamBControl --> [*]: period boundary (flagged)

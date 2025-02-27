@@ -1,0 +1,10 @@
+flowchart LR
+  JSON[StatsBomb event JSON] --> PARSE[parse.statsbomb]
+  PARSE --> SHOT[domain.Shot canonical location]
+  SHOT --> FEAT[features.shots: distance, angle, situation]
+  FEAT -->|freeze frame?| SPATIAL{spatial available?}
+  SPATIAL -->|yes| SETENC[masked set encoder]
+  SPATIAL -->|no| LOGIT[logistic / neural xG]
+  SETENC --> P[xG probability]
+  LOGIT --> P
+  P --> SERVE[serving: bounded, cached]

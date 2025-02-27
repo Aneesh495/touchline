@@ -1,0 +1,11 @@
+flowchart LR
+  DRAW[sample strengths once per season] --> FIX[sample each remaining fixture]
+  FIX --> TABLE[compute table under season rules]
+  TABLE --> TB{tie?}
+  TB -->|yes| TIEBREAK[apply season tie-breaks]
+  TB -->|no| RANK[rank]
+  TIEBREAK --> RANK
+  RANK --> COUNT[record finishing positions]
+  COUNT --> REPEAT{more draws?}
+  REPEAT -->|yes| DRAW
+  REPEAT -->|no| DIST[distributions with Monte Carlo error]

@@ -1,0 +1,12 @@
+flowchart LR
+  SRC[source commit + input bytes] --> RUN[acceptance run]
+  RUN --> BUNDLE[evidence bundle]
+  BUNDLE --> PROBE[frozen probe]
+  BUNDLE --> WEIGHTS[saved model weights]
+  BUNDLE --> CLAIM[claimed metric]
+  BUNDLE --> RECORDS[raw feature/shot/sim records]
+  PROBE --> VERIFY[independent verifier]
+  WEIGHTS --> VERIFY
+  CLAIM --> VERIFY
+  RECORDS --> VERIFY
+  VERIFY --> STATUS[passed / failed with reason]
