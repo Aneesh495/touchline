@@ -1,0 +1,22 @@
+Touchline demo (synthetic sample data)
+================================================
+
+1) Expected goals
+   trained log loss 0.4798 vs base-rate 0.6863 (lower is better)
+   trained Brier    0.1563
+   example shot (8 m, open angle) xG = 0.808
+
+2) Team strength
+   Dixon-Coles home advantage (log) +0.175, rho +0.077
+   strongest attack: Club H (attack +0.706)
+
+3) Simulated season (5000 draws), title probabilities
+   Club H     P(1st) = 0.912 +/- 0.004
+   Club B     P(1st) = 0.060 +/- 0.003
+   Club C     P(1st) = 0.015 +/- 0.002
+   Club G     P(1st) = 0.006 +/- 0.001
+   Club A     P(1st) = 0.005 +/- 0.001
+
+   Club H vs Club E: home 0.93 / draw 0.05 / away 0.02
+
+Done. All numbers above come from fitted models on synthetic data.
