@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Touchline</title>
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 1.5rem;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      h1 { font-size: 1.3rem; }
+      svg { max-width: 100%; height: auto; display: block; margin: 0.5rem 0; }
+      .coverage { color: #94a3b8; font-size: 0.9rem; }
+      .hint { color: #64748b; font-size: 0.85rem; }
+      .warn { color: #ef4444; }
+      strong { color: #38bdf8; }
+      /* narrow-layout support */
+      @media (max-width: 520px) {
+        body { padding: 0.75rem; }
+        h1 { font-size: 1.1rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">loading…</main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
