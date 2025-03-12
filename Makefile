@@ -21,10 +21,19 @@ doctor:
 build:
 	$(PY) -c "import touchline; print('touchline', touchline.__version__)"
 
-# Coverage plugin autoload hangs in some sandboxed environments; disable autoload
-# and enable the plugins we actually use explicitly.
+# Coverage plugin autoload hangs in some sandboxed environments; disable autoload.
+# torch and lightgbm ship conflicting OpenMP runtimes that can crash a shared
+# interpreter, so the neural and boosted tests run in a separate process from the
+# core suite. Each invocation is isolated and reports its own result.
+PYTEST = PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 $(PY) -m pytest -p no:cacheprovider -q
+
 test:
-	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 $(PY) -m pytest tests/ -q -p no:cacheprovider
+	$(PYTEST) tests/ \
+	  --ignore=tests/test_neural.py \
+	  --ignore=tests/test_campaign.py \
+	  --ignore=tests/test_xg_boosted_strata.py
+	$(PYTEST) tests/test_xg_boosted_strata.py
+	$(PYTEST) tests/test_neural.py tests/test_campaign.py
 
 lint:
 	.venv/bin/ruff check src tests
