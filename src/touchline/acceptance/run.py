@@ -65,24 +65,82 @@ def run_acceptance(run_id: str | None, profile: str = "cpu", root: str = "eviden
     sim_records = _sim_records()
     _write(out / "sim_records.json", sim_records)
 
-    # 5. Manifest with source identity and environment.
+    # 5. Environment, source inputs, datasets, commands, and the manifest.
+    source_commit = _git_commit()
+    _write(
+        out / "ENVIRONMENT.json",
+        {
+            "python": platform.python_version(),
+            "platform": platform.platform(),
+            "numpy": np.__version__,
+            "profile": profile,
+        },
+    )
+    _write(
+        out / "SOURCE_INPUTS.json",
+        {
+            "source_commit": source_commit,
+            "data": "synthetic sample (generate_sample_shots seed=11, "
+            "generate_sample_league seed=7)",
+            "note": "sample-scale; full profile uses acquired real data",
+        },
+    )
+    _write(
+        out / "DATASETS.json",
+        {
+            "sample": {"kind": "synthetic", "seed_shots": 11, "seed_league": 7},
+            "real_sources": ["statsbomb_open_data", "football_data_uk"],
+        },
+    )
+    commands = [
+        {"cmd": "touchline train", "produces": "xg_model.json"},
+        {"cmd": "touchline simulate", "produces": "sim_records.json"},
+        {"cmd": "touchline acceptance", "produces": "this bundle"},
+    ]
+    (out / "COMMANDS.jsonl").write_text(
+        "\n".join(json.dumps(c) for c in commands) + "\n"
+    )
+
     manifest = {
         "run_id": run_id,
         "profile": profile,
         "created": date.today().isoformat(),
-        "source_commit": _git_commit(),
+        "source_commit": source_commit,
         "environment": {
             "python": platform.python_version(),
             "platform": platform.platform(),
             "numpy": np.__version__,
         },
         "xg_log_loss": claimed_ll,
+        "artifacts": [
+            "xg_probe.json",
+            "xg_model.json",
+            "xg_claimed.json",
+            "shot_records.json",
+            "feature_records.json",
+            "sim_records.json",
+            "ENVIRONMENT.json",
+            "SOURCE_INPUTS.json",
+            "DATASETS.json",
+            "COMMANDS.jsonl",
+        ],
         "note": "sample-scale evidence; full profile runs the same code over "
         "acquired real data and a larger simulation budget",
     }
     _write(out / "MANIFEST.json", manifest)
+    _write(
+        out / "ACCEPTANCE.json",
+        {
+            "run_id": run_id,
+            "profile": profile,
+            "status": "completed",
+            "scale": "diagnostic" if profile != "full" else "full",
+            "xg_log_loss": claimed_ll,
+        },
+    )
 
     print(f"acceptance: wrote evidence bundle to {out}")
+    print(f"  source commit {source_commit}")
     print(f"  xg held-out log loss {claimed_ll:.4f}")
     print(f"  verify with: make verify EVIDENCE={out}")
     return 0
