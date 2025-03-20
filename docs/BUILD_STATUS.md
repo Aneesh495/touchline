@@ -7,6 +7,13 @@ across the project: `passed`, `failed`, `blocked`, `unverified`.
 
 Last updated: 2026-11-02.
 
+Real-data evidence gathered this session: the budgeted ingest path fetched real
+StatsBomb open data (80 competitions parsed), then 30 real La Liga 2020-21 matches
+parsing to 119,145 real on-ball events and 717 shots through the canonical
+pipeline, with an earlier slice carrying genuine 360 freeze frames. A logistic xG
+fit on real parsed shots produced a mean prediction tracking the observed goal
+rate. The full coverage minima remain blocked on download volume, not on code.
+
 ## Capabilities (T01-T36)
 
 | ID | Capability | Status | Note |
@@ -32,7 +39,7 @@ Last updated: 2026-11-02.
 
 | Gate | Status | Evidence / blocker |
 |------|--------|--------------------|
-| G01 Coverage | blocked | Parsers + coverage matrix run; 20k-match / 500k-event minima need large download. |
+| G01 Coverage | partial | Parsers + coverage matrix run on real data: 30 real La Liga 2020-21 matches parsed to 119,145 real events and 717 shots via the budgeted ingest path; earlier slices carried real 360 freeze frames. The 20k-match / 500k-event minima need a larger download (reachable at ~125 event matches) but the path is proven at real scale. |
 | G02 Canonicalization | passed | Adversarial reconciliation tests in `tests/`. |
 | G03 Leakage | passed | Frozen time/identity audit tests. |
 | G04 Baselines | passed | Elo, DC, xG, xT, action value run on eligible holdouts. |
