@@ -175,6 +175,43 @@ def _bench() -> int:
     return 0
 
 
+def _stress(n_sims: int) -> int:
+    """Stress the simulator with a large draw count and report timing + invariants."""
+    import time
+
+    import numpy as np
+
+    from touchline.data.sample import generate_sample_league
+    from touchline.models.dixon_coles import DixonColesModel
+    from touchline.simulate.monte_carlo import SeasonSimulator
+    from touchline.simulate.rules import LeagueRules
+
+    draws = max(n_sims, 50000)
+    league = generate_sample_league(n_teams=12, seed=7)
+    dc = DixonColesModel().fit(
+        league.home, league.away, league.home_goals, league.away_goals
+    )
+    teams = league.teams
+    remaining = [(h, a) for h in teams for a in teams if h != a]
+
+    def sampler(h, a, rng):
+        lam, mu = dc.expected_goals(h, a)
+        return int(rng.poisson(lam)), int(rng.poisson(mu))
+
+    t0 = time.monotonic()
+    res = SeasonSimulator(teams, LeagueRules(), [], remaining).simulate(
+        sampler, n_sims=draws, seed=1
+    )
+    elapsed = time.monotonic() - t0
+    # invariant: every team placed exactly once per draw, each rank filled once
+    per_pos = np.sum([res.position_counts[t] for t in teams], axis=0)
+    ok = bool(np.all(per_pos == draws))
+    print(f"stress: {draws} season draws in {elapsed:.1f}s "
+          f"({draws / max(elapsed, 1e-9):.0f}/s)")
+    print(f"  rank-fill invariant holds: {ok}")
+    return 0 if ok else 1
+
+
 def _ingest(do_network: bool) -> int:
     if not do_network:
         print("ingest: pass --sample for an offline summary, or run the network path "
@@ -274,8 +311,10 @@ def main(argv: list[str] | None = None) -> int:
 
         ok = verify_evidence(args.evidence)
         return 0 if ok else 1
-    if cmd in ("stress", "release"):
-        print(f"'{cmd}' runs the sample-scale path; see docs/BUILD_STATUS.md.")
+    if cmd == "stress":
+        return _stress(args.n_sims)
+    if cmd == "release":
+        print("release: package with 'python -m build'; see docs/BUILD_STATUS.md.")
         return 0
     print(f"unknown command {cmd}")
     return 2
