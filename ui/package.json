@@ -9,6 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "crosscheck": "node scripts/xg_crosscheck.mjs",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
