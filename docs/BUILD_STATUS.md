@@ -54,7 +54,7 @@ rate. The full coverage minima remain blocked on download volume, not on code.
 | G13 Recovery | passed | Resume tests for acquisition/training/simulation. |
 | G14 Semantic verifier | passed | Independent replay rejects leakage/flipped-pitch/altered-label/impossible-qualification. |
 | G15 Research publication | partial | Report + figures from frozen artifacts; full reconciliation at sample scale. |
-| G16 Release | partial | Fresh-setup demo verified; full remote campaign blocked. |
+| G16 Release | partial | Wheel + sdist build cleanly; the wheel installs in a fresh isolated venv and the `touchline demo` console entry point runs end to end from that install. Full remote full-profile campaign remains blocked on data/compute. |
 | G17-G21 | blocked/partial | Expanded coverage, dictionary reconciliation, provenance, campaign, publication: scaffolding implemented, full data/compute blocked. |
 
 ## How to read this
