@@ -7,6 +7,7 @@ missingness) which are handled here and nowhere else.
 """
 
 from touchline.parse.football_data_uk import parse_football_data_uk_csv
+from touchline.parse.openfootball import parse_openfootball
 from touchline.parse.statsbomb import (
     StatsBombCompetition,
     parse_statsbomb_competitions,
@@ -20,4 +21,5 @@ __all__ = [
     "StatsBombCompetition",
     "parse_statsbomb_competitions",
     "parse_football_data_uk_csv",
+    "parse_openfootball",
 ]
