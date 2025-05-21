@@ -57,6 +57,31 @@ rate. The full coverage minima remain blocked on download volume, not on code.
 | G16 Release | partial | Wheel + sdist build cleanly; the wheel installs in a fresh isolated venv and the `touchline demo` console entry point runs end to end from that install. Full remote full-profile campaign remains blocked on data/compute. |
 | G17-G21 | blocked/partial | Expanded coverage, dictionary reconciliation, provenance, campaign, publication: scaffolding implemented, full data/compute blocked. |
 
+## Implemented subsystems (summary)
+
+As of this session the following are implemented, tested, and pushed (217 test
+functions across isolated process groups, all passing; lint clean):
+
+- Domain core, ingest (budget/cache/identity/acquire), parsers (StatsBomb,
+  football-data.co.uk, openfootball).
+- Features: leakage registry, shots, possession, splits, team strength, tempo,
+  passing networks, schedule, replay timeline.
+- Models: Elo, Dixon-Coles, xG (logistic/boosted/neural), expected threat, action
+  value, set/sequence encoders, hierarchical shrinkage, counts, pass/carry,
+  discipline, set pieces, penalties, shootouts, goalkeeping, expected assists,
+  free kicks.
+- Simulate: rules, Monte Carlo (correlated draws, 100k-draw stress verified),
+  exact enumeration, UCL eras, knockout brackets, full league-phase season.
+- Registry, recovery, serving (shot inference + batch simulation), coverage matrix
+  and competition catalogue, data quality, economics (transfers, contracts,
+  continuity, horizon survival, evidence ledger).
+- Verify: independent verifier with four semantic negative controls; acceptance
+  evidence bundle; figures from frozen artifacts.
+- Analysis: counterfactuals, guarded comparisons, finishing persistence.
+- TypeScript UI with client-side xG, unit tests, and a Python/TS cross-check.
+- Docs: architecture, spec, experiment plan, dictionary, 13 ADRs, 20 writeups,
+  thesis, run matrix, 12 diagrams.
+
 ## How to read this
 
 A gate marked `passed` has a real test or runnable artifact behind it at the scale
