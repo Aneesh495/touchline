@@ -38,3 +38,4 @@ node_modules/
 
 # Rendered diagram intermediates kept, but scratch excluded
 *.tmp
+data/
