@@ -39,7 +39,7 @@ rate. The full coverage minima remain blocked on download volume, not on code.
 
 | Gate | Status | Evidence / blocker |
 |------|--------|--------------------|
-| G01 Coverage | partial | Parsers + coverage matrix run on real data: 30 real La Liga 2020-21 matches parsed to 119,145 real events and 717 shots via the budgeted ingest path; earlier slices carried real 360 freeze frames. The 20k-match / 500k-event minima need a larger download (reachable at ~125 event matches) but the path is proven at real scale. |
+| G01 Coverage | partial (event floor met) | The budgeted ingest path acquired 142 real StatsBomb matches across multiple La Liga seasons parsing to 551,204 real on-ball events and 3,562 shots (unique match identities). This meets the 500k-event floor. The 20k-match minimum across all six competitions is still blocked because the open event data is concentrated in La Liga/UCL; match-level breadth for the other leagues needs football-data.co.uk pulls (parser implemented). |
 | G02 Canonicalization | passed | Adversarial reconciliation tests in `tests/`. |
 | G03 Leakage | passed | Frozen time/identity audit tests. |
 | G04 Baselines | passed | Elo, DC, xG, xT, action value run on eligible holdouts. |
