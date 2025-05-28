@@ -32,8 +32,14 @@ verifier recomputes and replays rather than trusting stored flags.
 Three findings stand on the CPU diagnostic profile with synthetic data, exercising
 the full protocol (seeds, splits, bootstrap, proper scores):
 
-- A linear xG is a strong, well-calibrated baseline; the neural model trains cleanly
-  but does not beat it here. H1 is a null result at this scale.
+- A linear xG is a strong, well-calibrated baseline; on synthetic diagnostic data
+  the neural model trains cleanly but does not beat it (H1 null at that scale).
+- On 3,562 real La Liga shots with a chronological split, all three learned xG
+  families beat the base rate (log loss 0.391); the gradient-boosted model leads
+  (0.351), the logistic baseline is strong (0.364), and the neural MLP is unstable
+  across seeds and does not reliably beat the logistic model. The honest H1 answer
+  on real data is that boosting's non-linearity helps while the neural MLP does not
+  consistently win on these tabular features.
 - A point-estimate forecast overstates confidence; correlated strength draws lower
   the favourite's title probability from 0.924 to 0.881 and are the honest choice.
 - The verifier catches every semantic negative control (leakage, flipped pitch,

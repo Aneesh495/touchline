@@ -42,3 +42,21 @@ to fix.
 The confirmatory evaluation of H1 and Q2 (hierarchical transfer) on real data, and
 all of H2 through H12, are open pending the full-scale campaign. They are predeclared
 in `HYPOTHESES.md` and will be reported with uncertainty whether positive or null.
+
+## C4: On real shots, learned xG beats the base rate; boosting leads
+
+Scope: 3,562 real StatsBomb La Liga shots, chronological split, test season
+2020-2021 (839 shots).
+Finding: logistic (0.364), gradient-boosted (0.351), and neural (0.363-0.390) xG
+all beat the base-rate log loss (0.391) on the held-out season. The boosted model
+is best; the neural MLP does not reliably beat the logistic baseline across seeds.
+Uncertainty: the logistic held-out log loss carries a bootstrap interval in
+`real_run_index.json`; the neural spread across seeds is the honest uncertainty on
+that family.
+Counterexample: the synthetic diagnostic data gave a neural null (C1); the real
+data shows boosting winning, so the diagnostic null did not generalise to "no model
+helps".
+Robustness: consistent across the three seeds for the deterministic logistic and
+boosted fits; neural varies.
+Overturned by: a larger real-data campaign with per-shot spatial context (the set
+encoder on 360 matches) where the neural family might overtake boosting.

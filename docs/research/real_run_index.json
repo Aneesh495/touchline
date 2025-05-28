@@ -1,0 +1,120 @@
+{
+  "dataset": "statsbomb_laliga_real",
+  "seasons": [
+    [
+      "2016-2017",
+      113
+    ],
+    [
+      "2017-2018",
+      971
+    ],
+    [
+      "2018-2019",
+      887
+    ],
+    [
+      "2019-2020",
+      752
+    ],
+    [
+      "2020-2021",
+      839
+    ]
+  ],
+  "total_shots": 3562,
+  "test_season": "2020-2021",
+  "runs": [
+    {
+      "run_id": "base_rate",
+      "model": "base_rate",
+      "seed": 0,
+      "log_loss": 0.39119417591134825,
+      "brier": 0.11489752170009723
+    },
+    {
+      "run_id": "logistic_s0",
+      "model": "logistic",
+      "seed": 0,
+      "log_loss": 0.36422584848637224,
+      "brier": 0.10194423285828498,
+      "ll_ci": [
+        0.3178352663508314,
+        0.41290043011591915
+      ]
+    },
+    {
+      "run_id": "logistic_s1",
+      "model": "logistic",
+      "seed": 1,
+      "log_loss": 0.36422584848637224,
+      "brier": 0.10194423285828498,
+      "ll_ci": [
+        0.3157124370059757,
+        0.4180846878617692
+      ]
+    },
+    {
+      "run_id": "logistic_s2",
+      "model": "logistic",
+      "seed": 2,
+      "log_loss": 0.36422584848637224,
+      "brier": 0.10194423285828498,
+      "ll_ci": [
+        0.31753857365633115,
+        0.41859883194824193
+      ]
+    },
+    {
+      "run_id": "boosted_s0",
+      "model": "boosted",
+      "seed": 0,
+      "log_loss": 0.35069199951177193,
+      "brier": 0.10289969782646151,
+      "best_iteration": 73
+    },
+    {
+      "run_id": "boosted_s1",
+      "model": "boosted",
+      "seed": 1,
+      "log_loss": 0.35069199951177193,
+      "brier": 0.10289969782646151,
+      "best_iteration": 73
+    },
+    {
+      "run_id": "boosted_s2",
+      "model": "boosted",
+      "seed": 2,
+      "log_loss": 0.35069199951177193,
+      "brier": 0.10289969782646151,
+      "best_iteration": 73
+    },
+    {
+      "run_id": "neural_s0",
+      "model": "neural",
+      "seed": 0,
+      "log_loss": 0.3903943006284212,
+      "brier": 0.1054293213525807,
+      "loss_start": 0.7030217051506042,
+      "loss_end": 0.29761478304862976
+    },
+    {
+      "run_id": "neural_s1",
+      "model": "neural",
+      "seed": 1,
+      "log_loss": 0.3871076639743644,
+      "brier": 0.10559072971535786,
+      "loss_start": 0.6845847964286804,
+      "loss_end": 0.2976072132587433
+    },
+    {
+      "run_id": "neural_s2",
+      "model": "neural",
+      "seed": 2,
+      "log_loss": 0.362721509550112,
+      "brier": 0.10286163665718508,
+      "loss_start": 0.6955497860908508,
+      "loss_end": 0.30012837052345276
+    }
+  ]
+}
