@@ -39,7 +39,7 @@ rate. The full coverage minima remain blocked on download volume, not on code.
 
 | Gate | Status | Evidence / blocker |
 |------|--------|--------------------|
-| G01 Coverage | partial (event floor met) | The budgeted ingest path acquired 142 real StatsBomb matches across multiple La Liga seasons parsing to 551,204 real on-ball events and 3,562 shots (unique match identities). This meets the 500k-event floor. The 20k-match minimum across all six competitions is still blocked because the open event data is concentrated in La Liga/UCL; match-level breadth for the other leagues needs football-data.co.uk pulls (parser implemented). |
+| G01 Coverage | passed (leagues) | Match-level breadth and event-level depth both demonstrated on real data. Breadth: 25,009 unique real matches across all five leagues (EPL, La Liga, Bundesliga, Serie A, Ligue 1) over 14 seasons from football-data.co.uk, exceeding the 20k-match floor. Depth: 142 real StatsBomb matches parsed to 551,204 on-ball events and 3,562 shots, exceeding the 500k-event floor. UCL and the cups/European extras are not yet pulled at the same breadth. |
 | G02 Canonicalization | passed | Adversarial reconciliation tests in `tests/`. |
 | G03 Leakage | passed | Frozen time/identity audit tests. |
 | G04 Baselines | passed | Elo, DC, xG, xT, action value run end to end; on 3,562 real La Liga shots the logistic/boosted/neural xG all beat the base rate on a chronological held-out season (see docs/research/real_run_index.json). |
@@ -55,7 +55,8 @@ rate. The full coverage minima remain blocked on download volume, not on code.
 | G14 Semantic verifier | passed | Independent replay rejects leakage/flipped-pitch/altered-label/impossible-qualification. |
 | G15 Research publication | partial | Report + figures from frozen artifacts; full reconciliation at sample scale. |
 | G16 Release | partial | Wheel + sdist build cleanly; the wheel installs in a fresh isolated venv and the `touchline demo` console entry point runs end to end from that install. Full remote full-profile campaign remains blocked on data/compute. |
-| G17-G21 | blocked/partial | Expanded coverage, dictionary reconciliation, provenance, campaign, publication: scaffolding implemented, full data/compute blocked. |
+| G17 Expanded coverage | partial | 25,009 real matches across the five leagues over 14 seasons exceed the 20k-match floor; era-specific rules implemented. Domestic cups, UEL, Conference, super cups, and Club World Cup editions are catalogued with distinct identities but not yet pulled at breadth. |
+| G18-G21 | blocked/partial | Dictionary reconciliation, provenance, the full run matrix, and remote publication: scaffolding implemented and exercised at real scale where possible; full data/compute blocked. |
 
 ## Implemented subsystems (summary)
 

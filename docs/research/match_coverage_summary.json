@@ -1,0 +1,19 @@
+{
+  "source": "football-data.co.uk",
+  "acquired_via": "scripts/pull_football_data.py 2010 2023",
+  "competitions": ["EPL", "LALIGA", "BUNDESLIGA", "SERIEA", "LIGUE1"],
+  "seasons": 14,
+  "season_range": "2010-2011 to 2023-2024",
+  "total_unique_matches": 25009,
+  "per_competition": {
+    "EPL": 4940,
+    "LALIGA": 5320,
+    "BUNDESLIGA": 4284,
+    "SERIEA": 5320,
+    "LIGUE1": 5145
+  },
+  "malformed_skipped": 388,
+  "match_floor_required": 20000,
+  "match_floor_met": true,
+  "note": "unique match identities per the de-dup key; counts real matches, not augmented rows. Event-level depth (551k events) is separate, from StatsBomb open data."
+}
