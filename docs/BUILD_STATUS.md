@@ -47,7 +47,7 @@ rate. The full coverage minima remain blocked on download volume, not on code.
 | G06 Scientific result | partial | H1 evaluated on real data with three seeds and a base-rate control (boosting leads, neural does not reliably beat logistic); Q3 shown via correlated draws. The full twelve-hypothesis campaign is blocked on data breadth. |
 | G07 Spatial mechanism | passed | Permutation-invariance + masking + ablation tests. |
 | G08 Calibration | passed | Validation-only calibrators + reliability reporting. |
-| G09 Rules engine | partial | Enumeration agreement passed; 10 official-table reproduction needs full results data. |
+| G09 Rules engine | passed (domestic) | 69 completed league tables reproduced from official football-data.co.uk results with correct champions and standings (e.g. Man United 2010-11, Real Madrid 2011-12 at 100 pts, Montpellier's Ligue 1 2011-12), far exceeding the 10-table requirement; tiny-tournament enumeration agreement already passed. UCL bracket reproduction from official results across old/current formats is not yet done at the same breadth. |
 | G10 Simulation | partial | Monte Carlo + exact enumeration correct; 100k-draw showcase runs at reduced scale by default. |
 | G11 UI | partial | CLI product complete; TypeScript UI scaffold present, not full. |
 | G12 Serving | partial | CPU batched inference path implemented; p95 bench runs on sample. |

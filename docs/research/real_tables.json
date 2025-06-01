@@ -1,0 +1,1008 @@
+{
+  "tables_reproduced": 69,
+  "tables": [
+    {
+      "competition": "EPL",
+      "season": "2010-2011",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man United",
+      "champion_points": 80,
+      "runner_up": "Chelsea",
+      "relegated": [
+        "Birmingham",
+        "Blackpool",
+        "West Ham"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2010-2011",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 96,
+      "runner_up": "Real Madrid",
+      "relegated": [
+        "La Coruna",
+        "Hercules",
+        "Almeria"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2010-2011",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Dortmund",
+      "champion_points": 75,
+      "runner_up": "Leverkusen",
+      "relegated": [
+        "M'gladbach",
+        "Ein Frankfurt",
+        "St Pauli"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2010-2011",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Milan",
+      "champion_points": 82,
+      "runner_up": "Inter",
+      "relegated": [
+        "Sampdoria",
+        "Brescia",
+        "Bari"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2010-2011",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Lille",
+      "champion_points": 76,
+      "runner_up": "Marseille",
+      "relegated": [
+        "Monaco",
+        "Lens",
+        "Arles"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2011-2012",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 89,
+      "runner_up": "Man United",
+      "relegated": [
+        "Bolton",
+        "Blackburn",
+        "Wolves"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2011-2012",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Real Madrid",
+      "champion_points": 100,
+      "runner_up": "Barcelona",
+      "relegated": [
+        "Villarreal",
+        "Sp Gijon",
+        "Santander"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2011-2012",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Dortmund",
+      "champion_points": 81,
+      "runner_up": "Bayern Munich",
+      "relegated": [
+        "Hertha",
+        "FC Koln",
+        "Kaiserslautern"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2011-2012",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 84,
+      "runner_up": "Milan",
+      "relegated": [
+        "Lecce",
+        "Novara",
+        "Cesena"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2011-2012",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Montpellier",
+      "champion_points": 82,
+      "runner_up": "Paris SG",
+      "relegated": [
+        "Caen",
+        "Dijon",
+        "Auxerre"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2012-2013",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man United",
+      "champion_points": 89,
+      "runner_up": "Man City",
+      "relegated": [
+        "Wigan",
+        "Reading",
+        "QPR"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2012-2013",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 100,
+      "runner_up": "Real Madrid",
+      "relegated": [
+        "Mallorca",
+        "La Coruna",
+        "Zaragoza"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2012-2013",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 91,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Hoffenheim",
+        "Fortuna Dusseldorf",
+        "Greuther Furth"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2012-2013",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 87,
+      "runner_up": "Napoli",
+      "relegated": [
+        "Siena",
+        "Palermo",
+        "Pescara"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2012-2013",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 83,
+      "runner_up": "Marseille",
+      "relegated": [
+        "Nancy",
+        "Troyes",
+        "Brest"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2013-2014",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 86,
+      "runner_up": "Liverpool",
+      "relegated": [
+        "Norwich",
+        "Fulham",
+        "Cardiff"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2013-2014",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Ath Madrid",
+      "champion_points": 90,
+      "runner_up": "Barcelona",
+      "relegated": [
+        "Osasuna",
+        "Valladolid",
+        "Betis"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2013-2014",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 90,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Hamburg",
+        "Nurnberg",
+        "Braunschweig"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2013-2014",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 102,
+      "runner_up": "Roma",
+      "relegated": [
+        "Catania",
+        "Bologna",
+        "Livorno"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2013-2014",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 89,
+      "runner_up": "Monaco",
+      "relegated": [
+        "Sochaux",
+        "Valenciennes",
+        "Ajaccio"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2014-2015",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Chelsea",
+      "champion_points": 87,
+      "runner_up": "Man City",
+      "relegated": [
+        "Hull",
+        "Burnley",
+        "QPR"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2014-2015",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 94,
+      "runner_up": "Real Madrid",
+      "relegated": [
+        "Granada",
+        "Almeria",
+        "Cordoba"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2014-2015",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 79,
+      "runner_up": "Wolfsburg",
+      "relegated": [
+        "Hamburg",
+        "Freiburg",
+        "Paderborn"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2014-2015",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 87,
+      "runner_up": "Roma",
+      "relegated": [
+        "Cagliari",
+        "Parma",
+        "Cesena"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2014-2015",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 83,
+      "runner_up": "Lyon",
+      "relegated": [
+        "Evian Thonon Gaillard",
+        "Metz",
+        "Lens"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2015-2016",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Leicester",
+      "champion_points": 81,
+      "runner_up": "Arsenal",
+      "relegated": [
+        "Newcastle",
+        "Norwich",
+        "Aston Villa"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2015-2016",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 91,
+      "runner_up": "Real Madrid",
+      "relegated": [
+        "Vallecano",
+        "Getafe",
+        "Levante"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2015-2016",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 88,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Ein Frankfurt",
+        "Stuttgart",
+        "Hannover"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2015-2016",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 91,
+      "runner_up": "Napoli",
+      "relegated": [
+        "Carpi",
+        "Frosinone",
+        "Verona"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2015-2016",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 96,
+      "runner_up": "Lyon",
+      "relegated": [
+        "Reims",
+        "Ajaccio GFCO",
+        "Troyes"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2016-2017",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Chelsea",
+      "champion_points": 93,
+      "runner_up": "Tottenham",
+      "relegated": [
+        "Hull",
+        "Middlesbrough",
+        "Sunderland"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2016-2017",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Real Madrid",
+      "champion_points": 93,
+      "runner_up": "Barcelona",
+      "relegated": [
+        "Sp Gijon",
+        "Osasuna",
+        "Granada"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2016-2017",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 82,
+      "runner_up": "RB Leipzig",
+      "relegated": [
+        "Wolfsburg",
+        "Ingolstadt",
+        "Darmstadt"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2016-2017",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 91,
+      "runner_up": "Roma",
+      "relegated": [
+        "Empoli",
+        "Palermo",
+        "Pescara"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2016-2017",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Monaco",
+      "champion_points": 95,
+      "runner_up": "Paris SG",
+      "relegated": [
+        "Lorient",
+        "Nancy",
+        "Bastia"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2017-2018",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 100,
+      "runner_up": "Man United",
+      "relegated": [
+        "Swansea",
+        "Stoke",
+        "West Brom"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2017-2018",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 93,
+      "runner_up": "Ath Madrid",
+      "relegated": [
+        "La Coruna",
+        "Las Palmas",
+        "Malaga"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2017-2018",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 84,
+      "runner_up": "Schalke 04",
+      "relegated": [
+        "Wolfsburg",
+        "Hamburg",
+        "FC Koln"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2017-2018",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 95,
+      "runner_up": "Napoli",
+      "relegated": [
+        "Crotone",
+        "Verona",
+        "Benevento"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2017-2018",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 93,
+      "runner_up": "Monaco",
+      "relegated": [
+        "Toulouse",
+        "Troyes",
+        "Metz"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2018-2019",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 98,
+      "runner_up": "Liverpool",
+      "relegated": [
+        "Cardiff",
+        "Fulham",
+        "Huddersfield"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2018-2019",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 87,
+      "runner_up": "Ath Madrid",
+      "relegated": [
+        "Girona",
+        "Huesca",
+        "Vallecano"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2018-2019",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 78,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Stuttgart",
+        "Hannover",
+        "Nurnberg"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2018-2019",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 90,
+      "runner_up": "Napoli",
+      "relegated": [
+        "Empoli",
+        "Frosinone",
+        "Chievo"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2018-2019",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 91,
+      "runner_up": "Lille",
+      "relegated": [
+        "Dijon",
+        "Caen",
+        "Guingamp"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2019-2020",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Liverpool",
+      "champion_points": 99,
+      "runner_up": "Man City",
+      "relegated": [
+        "Bournemouth",
+        "Watford",
+        "Norwich"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2019-2020",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Real Madrid",
+      "champion_points": 87,
+      "runner_up": "Barcelona",
+      "relegated": [
+        "Leganes",
+        "Mallorca",
+        "Espanol"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2019-2020",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 82,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Werder Bremen",
+        "Fortuna Dusseldorf",
+        "Paderborn"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2019-2020",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Juventus",
+      "champion_points": 83,
+      "runner_up": "Inter",
+      "relegated": [
+        "Lecce",
+        "Brescia",
+        "Spal"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2019-2020",
+      "teams": 20,
+      "matches": 279,
+      "champion": "Paris SG",
+      "champion_points": 68,
+      "runner_up": "Marseille",
+      "relegated": [
+        "Nimes",
+        "Amiens",
+        "Toulouse"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2020-2021",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 86,
+      "runner_up": "Man United",
+      "relegated": [
+        "Fulham",
+        "West Brom",
+        "Sheffield United"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2020-2021",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Ath Madrid",
+      "champion_points": 86,
+      "runner_up": "Real Madrid",
+      "relegated": [
+        "Huesca",
+        "Valladolid",
+        "Eibar"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2020-2021",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 78,
+      "runner_up": "RB Leipzig",
+      "relegated": [
+        "FC Koln",
+        "Werder Bremen",
+        "Schalke 04"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2020-2021",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Inter",
+      "champion_points": 91,
+      "runner_up": "Milan",
+      "relegated": [
+        "Benevento",
+        "Crotone",
+        "Parma"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2020-2021",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Lille",
+      "champion_points": 83,
+      "runner_up": "Paris SG",
+      "relegated": [
+        "Nantes",
+        "Nimes",
+        "Dijon"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2021-2022",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Real Madrid",
+      "champion_points": 86,
+      "runner_up": "Barcelona",
+      "relegated": [
+        "Granada",
+        "Levante",
+        "Alaves"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2021-2022",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 77,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Hertha",
+        "Bielefeld",
+        "Greuther Furth"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2021-2022",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Milan",
+      "champion_points": 86,
+      "runner_up": "Inter",
+      "relegated": [
+        "Cagliari",
+        "Genoa",
+        "Venezia"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2021-2022",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 86,
+      "runner_up": "Marseille",
+      "relegated": [
+        "St Etienne",
+        "Metz",
+        "Bordeaux"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2022-2023",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 89,
+      "runner_up": "Arsenal",
+      "relegated": [
+        "Leicester",
+        "Leeds",
+        "Southampton"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2022-2023",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Barcelona",
+      "champion_points": 88,
+      "runner_up": "Real Madrid",
+      "relegated": [
+        "Valladolid",
+        "Espanol",
+        "Elche"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2022-2023",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Bayern Munich",
+      "champion_points": 71,
+      "runner_up": "Dortmund",
+      "relegated": [
+        "Stuttgart",
+        "Schalke 04",
+        "Hertha"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2022-2023",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Napoli",
+      "champion_points": 90,
+      "runner_up": "Lazio",
+      "relegated": [
+        "Spezia",
+        "Cremonese",
+        "Sampdoria"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2022-2023",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Paris SG",
+      "champion_points": 85,
+      "runner_up": "Lens",
+      "relegated": [
+        "Ajaccio",
+        "Troyes",
+        "Angers"
+      ]
+    },
+    {
+      "competition": "EPL",
+      "season": "2023-2024",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Man City",
+      "champion_points": 91,
+      "runner_up": "Arsenal",
+      "relegated": [
+        "Luton",
+        "Burnley",
+        "Sheffield United"
+      ]
+    },
+    {
+      "competition": "LALIGA",
+      "season": "2023-2024",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Real Madrid",
+      "champion_points": 95,
+      "runner_up": "Barcelona",
+      "relegated": [
+        "Cadiz",
+        "Almeria",
+        "Granada"
+      ]
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "season": "2023-2024",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Leverkusen",
+      "champion_points": 90,
+      "runner_up": "Stuttgart",
+      "relegated": [
+        "Bochum",
+        "FC Koln",
+        "Darmstadt"
+      ]
+    },
+    {
+      "competition": "SERIEA",
+      "season": "2023-2024",
+      "teams": 20,
+      "matches": 380,
+      "champion": "Inter",
+      "champion_points": 94,
+      "runner_up": "Milan",
+      "relegated": [
+        "Frosinone",
+        "Sassuolo",
+        "Salernitana"
+      ]
+    },
+    {
+      "competition": "LIGUE1",
+      "season": "2023-2024",
+      "teams": 18,
+      "matches": 306,
+      "champion": "Paris SG",
+      "champion_points": 76,
+      "runner_up": "Monaco",
+      "relegated": [
+        "Lorient",
+        "Metz",
+        "Clermont"
+      ]
+    }
+  ],
+  "forecasts": [
+    {
+      "competition": "EPL",
+      "train": 3458,
+      "test": 1482,
+      "elo_log_loss": 1.0375508239853501,
+      "base_log_loss": 1.0643426927537036
+    },
+    {
+      "competition": "LALIGA",
+      "train": 3723,
+      "test": 1597,
+      "elo_log_loss": 1.0339145184371215,
+      "base_log_loss": 1.0763685841978259
+    },
+    {
+      "competition": "BUNDESLIGA",
+      "train": 2998,
+      "test": 1286,
+      "elo_log_loss": 1.0298384468792574,
+      "base_log_loss": 1.0690587987797429
+    },
+    {
+      "competition": "SERIEA",
+      "train": 3723,
+      "test": 1597,
+      "elo_log_loss": 1.019884351164088,
+      "base_log_loss": 1.0857896055605605
+    },
+    {
+      "competition": "LIGUE1",
+      "train": 3601,
+      "test": 1544,
+      "elo_log_loss": 1.0792495674623068,
+      "base_log_loss": 1.0915371965200322
+    }
+  ]
+}

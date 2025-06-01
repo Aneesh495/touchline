@@ -60,3 +60,20 @@ Robustness: consistent across the three seeds for the deterministic logistic and
 boosted fits; neural varies.
 Overturned by: a larger real-data campaign with per-shot spatial context (the set
 encoder on 360 matches) where the neural family might overtake boosting.
+
+
+## C5: The rules engine reproduces real league tables; Elo beats the base rate
+
+Scope: 69 completed league seasons (five leagues, 2010-2024) from
+football-data.co.uk results.
+Finding: the rules engine reproduces the actual champions and standings from
+official results (e.g. Man United 2010-11 at 80 pts, Real Madrid 2011-12 at 100
+pts, Montpellier winning Ligue 1 2011-12, Dortmund's back-to-back Bundesligas),
+matching the public historical record. A rolling-origin Elo result forecast beats
+a base-rate predictor on held-out real matches in all five leagues (e.g. Serie A
+1.020 vs 1.086 multiclass log loss).
+Uncertainty: the forecast is a single train/test split per league; the numbers are
+in `real_tables.json`.
+Counterexample: none; every reproduced champion matches the record.
+Overturned by: a reproduction that disagrees with an official final table, which
+would indicate a rules or parsing bug.
