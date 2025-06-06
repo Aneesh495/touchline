@@ -78,6 +78,9 @@ simulate:
 thesis:
 	$(PY) -m touchline.cli thesis $(ARGS)
 
+store:
+	$(PY) -m touchline.cli store $(ARGS)
+
 acceptance:
 	$(PY) -m touchline.cli acceptance --run-id $(RUN_ID) --profile $(PROFILE)
 

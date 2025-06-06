@@ -237,6 +237,26 @@ def _ingest(do_network: bool) -> int:
     return 0
 
 
+def _store_query() -> int:
+    """Query the Arrow/Parquet store via DuckDB if it has been built."""
+    from pathlib import Path
+
+    store_root = Path("data/arrow")
+    if not store_root.exists() or not list(store_root.rglob("*.parquet")):
+        print("store: no Parquet partitions found; build with scripts/build_store.py")
+        return 0
+    from touchline.store.duck import DuckQuery
+
+    dq = DuckQuery(store_root)
+    print(f"store: {dq.total_shots()} shots across partitions")
+    print("goal rate by 5m distance band:")
+    for band, rate, n in dq.goal_rate_by_distance_band(band_m=5.0):
+        if n >= 10:
+            print(f"  {band * 5:>3}-{band * 5 + 5:>3}m: rate={rate:.3f} n={n}")
+    dq.close()
+    return 0
+
+
 def _thesis() -> int:
     from pathlib import Path
 
@@ -257,7 +277,7 @@ def build_parser() -> argparse.ArgumentParser:
     for name in [
         "doctor", "build", "data", "demo", "bench", "stress", "ingest",
         "coverage", "features", "train", "evaluate", "simulate", "thesis",
-        "acceptance", "verify", "release",
+        "store", "acceptance", "verify", "release",
     ]:
         sp = sub.add_parser(name)
         sp.add_argument("--sample", action="store_true")
@@ -302,6 +322,8 @@ def main(argv: list[str] | None = None) -> int:
         return _ingest(args.network)
     if cmd == "thesis":
         return _thesis()
+    if cmd == "store":
+        return _store_query()
     if cmd == "acceptance":
         from touchline.acceptance.run import run_acceptance
 
