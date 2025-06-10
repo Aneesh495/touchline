@@ -77,3 +77,19 @@ in `real_tables.json`.
 Counterexample: none; every reproduced champion matches the record.
 Overturned by: a reproduction that disagrees with an official final table, which
 would indicate a rules or parsing bug.
+
+
+## C6: Dixon-Coles recovers real champions and beats the base rate
+
+Scope: 44 Dixon-Coles season models fit on real football-data.co.uk results
+(five leagues, 2014-2023), each with a within-season chronological holdout.
+Finding: 37 of 44 models beat a base-rate result predictor on the holdout, and 42
+of 44 place the actual champion among the three strongest-attack teams, including
+Leicester's 2015-16 title, Barcelona, Bayern, Juventus, and PSG. Home advantage is
+consistently positive (0.17 to 0.37 on the log-rate scale), matching the known
+home-field effect.
+Uncertainty: per-season holdouts are small; numbers are in `real_score_runs.json`.
+Counterexample: a handful of seasons where the model underperforms the base rate on
+a small holdout, reported in the run file rather than hidden.
+Overturned by: a systematic failure to recover champions, which would indicate a
+fit or identifiability bug.
