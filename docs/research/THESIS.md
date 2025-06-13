@@ -46,13 +46,31 @@ the full protocol (seeds, splits, bootstrap, proper scores):
   altered labels, impossible qualification) plus a tampered metric and a missing
   artifact, each by recomputation.
 
+## 3b. What the real-data campaign added
+
+Acquisition then ran at scale: 25,009 unique real league matches across the five
+leagues (2010-2024) from football-data.co.uk, and 142 StatsBomb event matches
+parsing to 551,204 real on-ball events. On this real data:
+
+- The rules engine reproduced 69 completed league tables with the correct champions
+  and standings (verified against the public record, including Leicester 2015-16).
+- A rolling-origin Elo forecast beat the base rate on held-out matches in all five
+  leagues.
+- 44 Dixon-Coles season models beat the base rate on 37 of 44 within-season
+  holdouts and placed the real champion in the top-3 attack in 42 of 44.
+- The three xG families all beat the base rate on a chronological held-out season;
+  boosting led and the neural MLP did not reliably beat the logistic baseline.
+
+These are genuine, verifiable results on real data, not synthetic.
+
 ## 4. What is open
 
-The confirmatory, real-data evaluation of H1 and the hierarchical-transfer question
-Q2, and hypotheses H2 through H12, are open. They require the full-scale data
-campaign, which is blocked in a single build session by acquisition volume and
-compute. The acquisition path is implemented and verified against live StatsBomb
-open data; the blocked gates are recorded honestly in `docs/BUILD_STATUS.md`.
+Hypotheses H2 through H12 and the hierarchical-transfer question Q2 are partially
+exercised (the machinery and splits are implemented and tested) but their full
+confirmatory evaluation, the complete 240-cell run matrix, UCL bracket reproduction
+across eras, and remote full-profile acceptance remain open, bounded by data breadth
+and compute. The blocked items are recorded honestly in `docs/BUILD_STATUS.md`, and
+the production line floor (30k) is not met at roughly 7,100 substantive lines.
 
 ## 5. Honesty posture
 
