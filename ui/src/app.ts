@@ -46,6 +46,10 @@ export function scoreCursor(state: AppState): ShotMarker {
   };
 }
 
+export function setCursor(state: AppState, x: number, y: number): void {
+  state.cursor = { x: clamp01(x), y: clamp01(y) };
+}
+
 export function moveCursor(state: AppState, dx: number, dy: number): void {
   state.cursor.x = clamp01(state.cursor.x + dx);
   state.cursor.y = clamp01(state.cursor.y + dy);
@@ -63,16 +67,24 @@ export function renderApp(state: AppState): string {
   const coverage = state.coverage.map(coverageBadgeText).join(" | ");
   return `
     <section>
-      <h1>Touchline tactical view</h1>
+      <p class="eyebrow">TOUCHLINE / SHOT MODEL</p>
+      <h1>Explore expected goals</h1>
+      <p>Place an open-play shot to see its probability from the exported logistic model. The attacking goal is on the right.</p>
       <p class="coverage" role="status">${coverage || "no coverage loaded"}</p>
-      <svg width="${W}" height="${H}" role="img" aria-label="pitch and shot map">
+      <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" tabindex="0" aria-label="Pitch and shot map" aria-describedby="pitch-help">
         ${pitchSvg(W, H)}
         ${shotMarkersSvg(markers, W, H)}
       </svg>
-      <p>cursor xG <strong>${preview.xg.toFixed(3)}</strong>${preview.limitedSupport ? ' <span class="warn">(limited support)</span>' : ""
+      <p class="score" aria-live="polite">Shot estimate <strong>${preview.xg.toFixed(3)}</strong>${preview.limitedSupport ? ' <span class="warn">(limited support)</span>' : ""
     }</p>
-      <p>shots ${state.shots.length}, goals ${goals}, total xG ${totalXg.toFixed(2)}</p>
-      <p class="hint">arrow keys move, space toggles goal, enter adds the shot</p>
+      <div class="actions">
+        <button data-action="shot" type="button">Add shot</button>
+        <button data-action="goal" type="button" aria-pressed="${state.isGoal}">Mark as goal</button>
+        <button data-action="clear" type="button" ${state.shots.length ? "" : "disabled"}>Clear shots</button>
+      </div>
+      <p role="status">Shots ${state.shots.length} · Goals ${goals} · Total xG ${totalXg.toFixed(2)}</p>
+      <p id="pitch-help" class="hint">Tap the pitch to aim. On the focused pitch, use arrow keys to move, Space to toggle goal, and Enter to add a shot.</p>
+      <p class="hint">Red outlines mark shots outside the model's training range. <a href="https://github.com/Aneesh495/touchline/tree/main/ui">Model export and source</a></p>
     </section>`;
 }
 

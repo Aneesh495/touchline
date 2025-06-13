@@ -45,6 +45,6 @@ describe("tactical app logic", () => {
     expect(s.shots.length).toBe(1);
     const html = renderApp(s);
     expect(html).toContain("SAMPLE 2023-2024");
-    expect(html).toContain("shots 1");
+    expect(html).toContain("Shots 1");
   });
 });

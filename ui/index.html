@@ -13,16 +13,25 @@
         background: #0f172a;
         color: #e2e8f0;
       }
-      h1 { font-size: 1.3rem; }
+      main { max-width: 730px; margin: 0 auto; }
+      h1 { font-size: clamp(1.8rem, 6vw, 3rem); letter-spacing: -.04em; margin: .35rem 0; }
+      p { line-height: 1.55; }
+      .eyebrow { color: #7dd3fc; font: 700 .8rem system-ui; letter-spacing: .14em; }
+      .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+      .actions button { min-height: 44px; padding: .5rem 1rem; color: inherit; background: #1e293b; border: 1px solid #64748b; border-radius: .5rem; cursor: pointer; }
+      .actions button[aria-pressed="true"] { background: #78350f; }
+      .actions button:disabled { opacity: .55; cursor: default; }
+      :focus-visible { outline: 3px solid #7dd3fc; outline-offset: 3px; }
+      a { color: #7dd3fc; }
       svg { max-width: 100%; height: auto; display: block; margin: 0.5rem 0; }
       .coverage { color: #94a3b8; font-size: 0.9rem; }
-      .hint { color: #64748b; font-size: 0.85rem; }
+      .hint { color: #a5b4c6; font-size: 0.85rem; }
       .warn { color: #ef4444; }
       strong { color: #38bdf8; }
       /* narrow-layout support */
       @media (max-width: 520px) {
         body { padding: 0.75rem; }
-        h1 { font-size: 1.1rem; }
+        .actions button { flex: 1 1 auto; }
       }
     </style>
   </head>

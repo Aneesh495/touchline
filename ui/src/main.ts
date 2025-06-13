@@ -1,7 +1,7 @@
 // Browser entry: mount the app, load the exported model artifact, and wire the
 // keyboard. Falls back to a bundled default model so the UI runs without a server.
 
-import { addCursorShot, AppState, moveCursor, renderApp } from "./app";
+import { addCursorShot, AppState, moveCursor, renderApp, setCursor } from "./app";
 import defaultModel from "./model.json";
 
 async function loadState(): Promise<AppState> {
@@ -27,7 +27,16 @@ async function loadState(): Promise<AppState> {
 }
 
 function mount(root: HTMLElement, state: AppState): void {
+  const active = document.activeElement;
+  const action = active instanceof HTMLElement ? active.dataset.action : undefined;
+  const pitchFocused = active instanceof SVGElement && active.matches("svg[tabindex]");
   root.innerHTML = renderApp(state);
+  if (pitchFocused) root.querySelector<SVGElement>("svg")?.focus({ preventScroll: true });
+  if (action) {
+    const button = root.querySelector<HTMLButtonElement>(`[data-action="${action}"]`);
+    (button?.disabled ? root.querySelector<HTMLButtonElement>('[data-action="shot"]') : button)
+      ?.focus({ preventScroll: true });
+  }
 }
 
 async function main(): Promise<void> {
@@ -35,7 +44,21 @@ async function main(): Promise<void> {
   if (!root) return;
   const state = await loadState();
   mount(root, state);
-  window.addEventListener("keydown", (e) => {
+  root.addEventListener("click", (e) => {
+    if (!(e.target instanceof Element)) return;
+    const button = e.target.closest<HTMLButtonElement>("button[data-action]");
+    const pitch = e.target.closest<SVGSVGElement>("svg");
+    if (pitch) {
+      const box = pitch.getBoundingClientRect();
+      setCursor(state, (e.clientX - box.left) / box.width, 1 - (e.clientY - box.top) / box.height);
+    } else if (button?.dataset.action === "shot") addCursorShot(state);
+    else if (button?.dataset.action === "goal") state.isGoal = !state.isGoal;
+    else if (button?.dataset.action === "clear") state.shots = [];
+    else return;
+    mount(root, state);
+  });
+  root.addEventListener("keydown", (e) => {
+    if (!(e.target instanceof SVGElement) || !e.target.matches("svg[tabindex]")) return;
     const step = 0.02;
     if (e.key === "ArrowLeft") moveCursor(state, -step, 0);
     else if (e.key === "ArrowRight") moveCursor(state, step, 0);
